@@ -7,6 +7,7 @@
 - 于是想到ai能为galgame做些什么
 
 ## 工程说明
+> [c#测试工程](https://gitee.com/liuliuliuweixing/websocket-test.git)
 > 如果不想看我啰嗦，可以直接下跳到工程启动与交互
 
 - 集成了百度和腾讯的nlp - sdk接口
