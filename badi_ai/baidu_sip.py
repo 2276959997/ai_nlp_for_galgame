@@ -2,9 +2,6 @@ from app_interface.i_senticment import SenticMent, Emotion, BuildAiException, Ha
 from aip import AipNlp
 
 
-
-
-
 class BaiDuAi(SenticMent):
     """需要配置BaiDuAi"""
     conf = ['app_id', 'app_key', 'securet_key']

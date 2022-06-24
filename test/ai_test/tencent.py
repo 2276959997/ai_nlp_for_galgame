@@ -7,7 +7,7 @@ from tencentcloud.nlp.v20190408 import nlp_client, models
 
 # 闲聊
 try:
-    cred = credential.Credential("AKIDFmDUXXUGahdMq1GLExVt3cwAGDxYBg07", "A85nIdmmQ3a9IZmrnxAC4lIeDaq9NRL2")
+    cred = credential.Credential("", "")
     httpProfile = HttpProfile()
     httpProfile.endpoint = "nlp.tencentcloudapi.com"
 
@@ -31,7 +31,7 @@ except TencentCloudSDKException as err:
 # 情感判断
 
 try:
-    cred = credential.Credential("AKIDFmDUXXUGahdMq1GLExVt3cwAGDxYBg07", "A85nIdmmQ3a9IZmrnxAC4lIeDaq9NRL2")
+    cred = credential.Credential("", "")
     httpProfile = HttpProfile()
     httpProfile.endpoint = "nlp.tencentcloudapi.com"
 
