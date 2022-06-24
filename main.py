@@ -17,13 +17,13 @@ GAME_CLIENT = set()
 async def ai_output(websocket):
     global GAME_CLIENT
     async for msg in websocket:
-        print(msg)
+        msg = str(msg).encode('utf-8').decode("unicode_escape")
         msg = json.loads(msg)
-        if 'event' in msg:
-            event = msg['event']
+        if 'MsgEvet' in msg:
+            event = msg['MsgEvet']
             # TODO 返回分装成接口
             if event == 'str_emotion_classify':
-                send_msg = ai.get_str_classify(msg['text'])
+                send_msg = ai.get_str_classify(msg['MsgText'])
 
                 send_msg_dic = dict()
                 send_msg_dic['emotion_type'] = send_msg[0]
@@ -31,7 +31,10 @@ async def ai_output(websocket):
                 send_msg_dic['sub_label'] = send_msg[2]
                 send_msg_dic['replies'] = send_msg[3]
 
+                print(json.dumps(send_msg_dic).encode('utf-8').decode("unicode_escape"))
                 await websocket.send(json.dumps(send_msg_dic))
+        else:
+            await websocket.send('unknow message')
 
 
 async def main():

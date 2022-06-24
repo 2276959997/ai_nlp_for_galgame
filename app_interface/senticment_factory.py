@@ -7,7 +7,7 @@ class GetAi:
     @classmethod
     def get_ai(cls, conf):
         ai_object = None
-        if 'global_' in conf.__dict__.keys() and 'ai_choose' in conf.__dict__.keys():
+        if 'global_' in conf.__dict__.keys() and 'ai_choose' in conf.__dict__['global_'].__dict__:
             if conf.global_.ai_choose == 'baidu':
                 ai_object = BaiDuAi(app_id=conf.baidu.app_id, app_key=conf.baidu.app_key,
                                     securet_key=conf.baidu.securet_key)
